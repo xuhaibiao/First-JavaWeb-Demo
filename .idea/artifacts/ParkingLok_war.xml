@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ParkingLok:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/ParkingLok_war</output-path>
+    <root id="archive" name="ParkingLok_war.war">
+      <element id="artifact" artifact-name="ParkingLok:war exploded" />
+      <element id="dir-copy" path="$PROJECT_DIR$/web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="jsp" />
+          <element id="library" level="module" name="JUnit4" module-name="ParkingLok" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
