@@ -46,13 +46,13 @@
                 <option value ="administrator">管理员</option>
             </select>
 
-            <div style="margin-top: 1.5%">
+            <div style="margin-top: 5%">
                 <input type="text" value="" placeholder="请输入验证码（不区分大小写）" class="input-val">
                 <canvas id="canvas" width="100" height="30"></canvas>
             </div>
 
             <br><br>
-            <input  type="submit" class="btn btn-lg btn-primary btn-block" value="登录">
+            <input  type="submit" class="btn" style="width:145px;" value="登录">
             没有账号？<a href="${pageContext.request.contextPath}/register.jsp">立即注册！</a>
         </form>
 

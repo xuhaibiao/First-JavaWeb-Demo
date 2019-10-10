@@ -21,9 +21,9 @@
     <link href="CSS/style.css" rel="stylesheet">
 </head>
 <body>
-<div align="center"><img src="img/v.png"></div>
+<div align="center"><img src="img/help.png"></div>
 
-<div align="center"><input class="btn" style="width:145px;display:inline-block" onclick="javascript:history.back(-1);" value="返回"></div>
+<div align="center"><input type="button" class="btn" style="width:145px;display:inline-block" onclick="javascript:history.back(-1);" value="返回"></div>
 
 
 </body>
