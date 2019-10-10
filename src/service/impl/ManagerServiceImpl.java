@@ -1,10 +1,11 @@
 package service.impl;
 
 import dao.IPlInfoDao;
-import dao.impl.plInfoDaoImpl;
+import dao.impl.PlInfoDaoImpl;
+import doMain.PlInfo;
 import doMain.User;
-import doMain.plInfo;
-import service.IPlInfoService;
+import service.IManagerService;
+
 import service.IUserService;
 
 import java.util.List;
@@ -14,30 +15,30 @@ import java.util.List;
  * @date Create in 20:21 2019/10/7
  * @modified By
  */
-public class plInfoServiceImpl implements IPlInfoService {
-    IPlInfoDao dao = new plInfoDaoImpl();
+public class ManagerServiceImpl implements IManagerService {
+    IPlInfoDao dao = new PlInfoDaoImpl();
 
     @Override
-    public List<plInfo> findAll(){
+    public List<PlInfo> findAll(){
         return dao.findAll();
     }
 
     @Override
-    public void driveIn(plInfo car){
+    public void driveIn(PlInfo car){
         dao.driveIn(car);
     }
 
     @Override
-    public void driveOut(plInfo car){
+    public void driveOut(PlInfo car){
         dao.driveOut(car);
     }
 
     @Override
     public void driveOut(User user) {
-        IUserService service = new userServiceImpl();
+        IUserService service = new UserServiceImpl();
         List<Object> info = service.getInfo(user);
         Object o = info.get(0);
-        this.driveOut((plInfo) o);
+        this.driveOut((PlInfo) o);
     }
 
 

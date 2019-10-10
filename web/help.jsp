@@ -1,14 +1,14 @@
 <%--
   Created by IntelliJ IDEA.
   User: Lenovo
-  Date: 2019/9/15
-  Time: 23:35
+  Date: 2019/9/14
+  Time: 19:40
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>缴费</title>
+    <title>帮助</title>
 
     <%--suppress JSUnresolvedLibraryURL --%>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -21,18 +21,10 @@
     <link href="CSS/style.css" rel="stylesheet">
 </head>
 <body>
+<div align="center"><img src="img/v.png"></div>
 
-<div class="container">
+<div align="center"><input class="btn" style="width:145px;display:inline-block" onclick="javascript:history.back(-1);" value="返回"></div>
 
-    <form class="form-signin" action="${pageContext.request.contextPath}/addMoneyServlet" method="post">
-        <h2 class="form-signin-heading">请缴费！</h2>
-        <br>
-        <br>
-        <input type="submit" class="btn" style="width:145px;display:inline-block" value="充值">
-        <input type="button" class="btn" style="width:145px;display:inline-block" onclick="javascript:history.back(-1);" value="返回">
-    </form>
-
-</div>
 
 </body>
 </html>

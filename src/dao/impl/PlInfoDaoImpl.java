@@ -1,8 +1,8 @@
 package dao.impl;
 
 import dao.IPlInfoDao;
+import doMain.PlInfo;
 import doMain.User;
-import doMain.plInfo;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,14 +15,12 @@ import java.util.List;
  * @author HaibiaoXu
  * @date Create in 0:18 2019/9/10
  */
-public class plInfoDaoImpl implements IPlInfoDao {
+public class PlInfoDaoImpl implements IPlInfoDao {
     private JdbcTemplate jdbcTemplate = new JdbcTemplate(JdbcUtils.getDataSource());
 
-    /**
-     * 驶入车辆信息录入
-     */
+
     @Override
-    public void driveIn(plInfo car) {
+    public void driveIn(PlInfo car) {
         try {
 
             String sql = "update pl_info set carNumber=?,time =? where id=?";
@@ -34,11 +32,9 @@ public class plInfoDaoImpl implements IPlInfoDao {
 
     }
 
-    /**
-     * 驶出车辆信息录入
-     */
+
     @Override
-    public void driveOut(plInfo car) {
+    public void driveOut(PlInfo car) {
         try {
             String sql = "update pl_info set carNumber=null,time = null where carNumber=?";
 
@@ -49,17 +45,14 @@ public class plInfoDaoImpl implements IPlInfoDao {
 
     }
 
-    /**
-     * 获取所有信息
-     * @return plInfo对象
-     */
+
     @Override
-    public List<plInfo> findAll() {
+    public List<PlInfo> findAll() {
         try {
             String sql = "select * from pl_info";
 
-            RowMapper<plInfo> rowMapper=new BeanPropertyRowMapper<>(plInfo.class);
-            List<plInfo> plInfos = jdbcTemplate.query(sql, rowMapper);
+            RowMapper<PlInfo> rowMapper=new BeanPropertyRowMapper<>(PlInfo.class);
+            List<PlInfo> plInfos = jdbcTemplate.query(sql, rowMapper);
             return plInfos;
         } catch (DataAccessException e) {
             e.printStackTrace();
@@ -67,18 +60,14 @@ public class plInfoDaoImpl implements IPlInfoDao {
         return null;
     }
 
-    /**
-     * 获取特定用户车辆信息
-     * @param user
-     * @return
-     */
+
     @Override
-    public plInfo findOne(User user) {
-        plInfo pl;
+    public PlInfo findOne(User user) {
+        PlInfo pl;
         try {
             String sql = "select * from pl_info where carNumber = ?";
 
-            RowMapper<plInfo> rowMapper=new BeanPropertyRowMapper<>(plInfo.class);
+            RowMapper<PlInfo> rowMapper=new BeanPropertyRowMapper<>(PlInfo.class);
             pl = jdbcTemplate.queryForObject(sql, rowMapper,user.getUsername());
             return pl;
         } catch (DataAccessException e) {
@@ -87,16 +76,12 @@ public class plInfoDaoImpl implements IPlInfoDao {
         }
     }
 
-    /**
-     * 获取空车位
-     * @return 所有空车位
-     */
     @Override
-    public List<plInfo> getNull() {
+    public List<PlInfo> getNull() {
         try {
             String sql = "select * from pl_info where carNumber is null";
-            RowMapper<plInfo> rowMapper=new BeanPropertyRowMapper<>(plInfo.class);
-            List<plInfo> plInfos = jdbcTemplate.query(sql,rowMapper);
+            RowMapper<PlInfo> rowMapper=new BeanPropertyRowMapper<>(PlInfo.class);
+            List<PlInfo> plInfos = jdbcTemplate.query(sql,rowMapper);
             return plInfos;
         } catch (DataAccessException e) {
             e.printStackTrace();

@@ -1,7 +1,7 @@
 package service;
 
 import doMain.User;
-import doMain.plInfo;
+import doMain.PlInfo;
 
 import java.util.List;
 
@@ -58,7 +58,7 @@ public interface IUserService {
     /**
      * 获取本人停车信息
      * @param user 用户信息
-     * @return 停车信息列表 plInfo(停车位号码 车牌号 停车时间)  停车时长 应付金额
+     * @return 停车信息列表 PlInfo(停车位号码 车牌号 停车时间)  停车时长 应付金额
      */
     List<Object> getInfo(User user);
 
@@ -74,5 +74,7 @@ public interface IUserService {
      * 获取空停车位
      * @return 空停车位编号列表
      */
-    List<plInfo> getNullId();
+    List<PlInfo> getNullId();
+
+
 }

@@ -32,7 +32,8 @@
         <label for="new" class="sr-only" >新密码</label>
         <input type="password" id="new" name="new" class="form-control" placeholder="请输入您的新密码" required>
         <br><br>
-        <input type="submit" class="btn btn-lg btn-primary btn-block" value="确定更改">
+        <input type="submit" class="btn" style="width:145px;display:inline-block" value="确定更改">
+        <input type="button" class="btn" style="width:145px;display:inline-block" onclick="javascript:history.back(-1);" value="返回">
     </form>
 
 </div>

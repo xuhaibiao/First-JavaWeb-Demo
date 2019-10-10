@@ -1,7 +1,7 @@
 package doMain;
 
 
-public class cardInfo {
+public class CardInfo {
 
   private String username;
   private int money;
@@ -26,7 +26,7 @@ public class cardInfo {
 
   @Override
   public String toString() {
-    return "cardInfo{" +
+    return "CardInfo{" +
             "username='" + username + '\'' +
             ", money=" + money +
             '}';

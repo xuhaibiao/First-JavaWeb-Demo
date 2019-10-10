@@ -1,8 +1,8 @@
 package web.servlet;
 
-import doMain.plInfo;
-import service.IPlInfoService;
-import service.impl.plInfoServiceImpl;
+import doMain.PlInfo;
+import service.IManagerService;
+import service.impl.ManagerServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,13 +17,13 @@ import java.util.List;
  * @date Create in 22:06 2019/9/11
  */
 @WebServlet("/plInfoListServlet")
-public class plInfoListServlet extends HttpServlet {
+public class PlInfoListServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
 
-        IPlInfoService service = new plInfoServiceImpl();
-        List<plInfo> plInfos = service.findAll();
+        IManagerService service = new ManagerServiceImpl();
+        List<PlInfo> plInfos = service.findAll();
 
         request.setAttribute("plInfos", plInfos);
 

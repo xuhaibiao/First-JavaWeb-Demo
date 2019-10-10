@@ -3,7 +3,7 @@ package web.servlet;
 import doMain.User;
 import org.apache.commons.beanutils.BeanUtils;
 import service.IUserService;
-import service.impl.userServiceImpl;
+import service.impl.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +17,7 @@ import java.util.Map;
  * @date Create in 17:01 2019/9/8
  */
 @WebServlet("/loginServlet")
-public class loginServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
@@ -39,7 +39,7 @@ public class loginServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        IUserService service = new userServiceImpl();
+        IUserService service = new UserServiceImpl();
         User user = service.login(loginUser);
 
         if (user == null) {

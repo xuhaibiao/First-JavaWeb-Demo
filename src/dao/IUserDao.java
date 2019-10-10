@@ -9,6 +9,11 @@ import doMain.User;
  * @modified By
  */
 public interface IUserDao {
+    /**
+     * 登录方法
+     * @param loginUser 登录用户信息
+     * @return 用户信息
+     */
     User login(User loginUser) ;
 
     /**

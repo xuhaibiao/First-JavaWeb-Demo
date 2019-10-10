@@ -16,13 +16,13 @@ import java.util.List;
  * @date Create in 16:41 2019/10/7
  * @modified By
  */
-@WebFilter(filterName = "loginFilter",urlPatterns = "*.jsp")
-public class loginFilter implements Filter {
+@WebFilter(filterName = "LoginFilter",urlPatterns = "*.jsp")
+public class LoginFilter implements Filter {
     private static List<String> urls = new ArrayList<>();
     static {
         urls.add("/login.jsp");
         urls.add("/register.jsp");
-        urls.add("/loginServlet");
+        urls.add("/LoginServlet");
     }
 
     @Override

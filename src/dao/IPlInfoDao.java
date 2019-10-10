@@ -1,7 +1,7 @@
 package dao;
 
+import doMain.PlInfo;
 import doMain.User;
-import doMain.plInfo;
 
 
 import java.util.List;
@@ -12,30 +12,30 @@ import java.util.List;
  * @modified By
  */
 public interface IPlInfoDao {
-    void driveIn(plInfo car) ;
+    void driveIn(PlInfo car) ;
 
     /**
      * 驶出车辆信息录入
      */
-    void driveOut(plInfo car) ;
+    void driveOut(PlInfo car) ;
 
     /**
      * 获取所有信息
      * @return plInfo对象
      */
-    List<plInfo> findAll() ;
+    List<PlInfo> findAll() ;
 
     /**
      * 获取特定用户车辆信息
      * @param user
-     * @return
+     * @return 车辆信息
      */
-    plInfo findOne(User user) ;
+    PlInfo findOne(User user) ;
 
     /**
      * 获取空车位
      * @return 所有空车位
      */
-    List<plInfo> getNull();
+    List<PlInfo> getNull();
 
 }

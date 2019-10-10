@@ -85,7 +85,8 @@
         <span id="s_password"></span>
 
         <br><br>
-        <input type="submit" class="btn btn-lg btn-primary btn-block" value="注册">
+        <input type="submit" class="btn" style="width:145px;display:inline-block" value="注册">
+        <input type="button" class="btn" style="width:145px;display:inline-block" onclick="javascript:history.back(-1);" value="返回">
     </form>
 
 </div>

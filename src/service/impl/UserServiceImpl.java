@@ -3,11 +3,11 @@ package service.impl;
 import dao.ICardDao;
 import dao.IPlInfoDao;
 import dao.IUserDao;
-import dao.impl.cardDaoImpl;
-import dao.impl.plInfoDaoImpl;
-import dao.impl.userDaoImpl;
+import dao.impl.CardDaoImpl;
+import dao.impl.PlInfoDaoImpl;
+import dao.impl.UserDaoImpl;
+import doMain.PlInfo;
 import doMain.User;
-import doMain.plInfo;
 import service.IUserService;
 
 import java.sql.Timestamp;
@@ -19,10 +19,10 @@ import java.util.List;
  * @author HaibiaoXu
  * @date Create in 22:11 2019/9/12
  */
-public class userServiceImpl implements IUserService {
-    private IUserDao dao = new userDaoImpl();
-    private ICardDao dao2 = new cardDaoImpl();
-    private IPlInfoDao dao3 = new plInfoDaoImpl();
+public class UserServiceImpl implements IUserService {
+    private IUserDao dao = new UserDaoImpl();
+    private ICardDao dao2 = new CardDaoImpl();
+    private IPlInfoDao dao3 = new PlInfoDaoImpl();
     //收费标准
     private final int CHARGES = 20;
 
@@ -41,7 +41,7 @@ public class userServiceImpl implements IUserService {
     @Override
     public int getTime(User user) {
         //调用dao层获取停车时长
-        plInfo one = dao3.findOne(user);
+        PlInfo one = dao3.findOne(user);
         if (one == null) {
             return 0;
         }
@@ -74,9 +74,7 @@ public class userServiceImpl implements IUserService {
         dao2.pay(user, time);
     }
 
-    /*
-    plInfo(停车位号码 车牌号 停车时间)  停车时长 应付金额
-     */
+
     @Override
     public List<Object> getInfo(User user) {
         List list = new ArrayList();
@@ -91,17 +89,15 @@ public class userServiceImpl implements IUserService {
         return list;
     }
 
-    /**
-     * 更改密码
-     * @param user 用户
-     * @param newPassword 新密码
-     */
+
     @Override
     public void changePassword(User user, String newPassword) {
         dao.changePassword(user,newPassword);
     }
     @Override
-    public List<plInfo> getNullId() {
+    public List<PlInfo> getNullId() {
         return dao3.getNull();
     }
+
+
 }

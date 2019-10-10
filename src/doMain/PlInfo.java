@@ -4,7 +4,7 @@ package doMain;
 import java.sql.Timestamp;
 import java.util.Date;
 
-public class plInfo {
+public class PlInfo {
     private int id;
     private String carNumber;
     private Timestamp time;
@@ -41,7 +41,7 @@ public class plInfo {
 
     @Override
     public String toString() {
-        return "plInfo{" +
+        return "PlInfo{" +
                 "id='" + id + '\'' +
                 ", carNumber='" + carNumber + '\'' +
                 ", time=" + time +

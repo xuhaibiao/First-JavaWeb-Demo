@@ -28,7 +28,8 @@
         <h2 class="form-signin-heading">请缴费！</h2>
         <br>
         <br>
-        <input type="submit" class="btn btn-lg btn-primary btn-block" value="充值">
+        <input type="submit" class="btn" style="width:145px;display:inline-block" value="充值">
+        <input type="button" class="btn" style="width:145px;display:inline-block" onclick="javascript:history.back(-1);" value="返回">
     </form>
 
 </div>

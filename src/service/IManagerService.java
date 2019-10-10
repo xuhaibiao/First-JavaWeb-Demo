@@ -1,10 +1,8 @@
 package service;
 
 import doMain.User;
-import doMain.plInfo;
+import doMain.PlInfo;
 
-import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,30 +10,28 @@ import java.util.List;
  * @date Create in 20:17 2019/10/7
  * @modified By
  */
-public interface IPlInfoService {
+public interface IManagerService {
     /**
      * 查询停车场停车信息
-     * @return
+     * @return 停车场信息列表
      */
-    List<plInfo> findAll();
+    List<PlInfo> findAll();
 
     /**
      * 驶入车辆
      * @param car 车辆信息
      */
-    void driveIn(plInfo car);
+    void driveIn(PlInfo car);
 
     /**
      * 驶出车辆
      * @param car 车辆信息
      */
-    void driveOut(plInfo car);
+    void driveOut(PlInfo car);
 
     /**
      * 根据用户缴费驶出车辆
      * @param user 缴费用户
      */
     void driveOut(User user);
-
-
 }

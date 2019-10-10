@@ -54,6 +54,7 @@
                 <li role="presentation"><a href="${pageContext.request.contextPath}/userInfoServlet">我的停车信息</a></li>
                 <li role="presentation"><a href="${pageContext.request.contextPath}/getNullServlet">空停车位查询</a></li>
                 <li role="presentation"><a href="${pageContext.request.contextPath}/changePassword.jsp">更改密码</a></li>
+                <li role="presentation"><a href="${pageContext.request.contextPath}/help.jsp">用户手册</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">钱包<span class="caret"></span></a>
                     <ul class="dropdown-menu">

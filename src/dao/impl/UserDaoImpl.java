@@ -12,14 +12,10 @@ import util.JdbcUtils;
  * @author HaibiaoXu
  * @date Create in 15:23 2019/9/8
  */
-public class userDaoImpl implements IUserDao {
+public class UserDaoImpl implements IUserDao {
 
     private JdbcTemplate jdbcTemplate = new JdbcTemplate(JdbcUtils.getDataSource());
-    /**
-     * 登录方法
-     * @param loginUser 登录用户信息
-     * @return User 包含所有用户信息
-     */
+
     @Override
     public User login(User loginUser) {
         try {
@@ -36,10 +32,6 @@ public class userDaoImpl implements IUserDao {
         }
     }
 
-    /**
-     * 注册方法
-     * @param registerUser 注册用户信息
-     */
     @Override
     public void register(User registerUser) {
         try {
@@ -52,11 +44,7 @@ public class userDaoImpl implements IUserDao {
         }
     }
 
-    /**
-     * 更改密码
-     * @param user 用户
-     * @param newPassword 新密码
-     */
+
     @Override
     public void changePassword(User user, String newPassword) {
         try {

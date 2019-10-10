@@ -5,22 +5,16 @@ import doMain.User;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import util.JdbcUtils;
-
+//springdatajpa
 /**
  * @author HaibiaoXu
  * @date Create in 20:41 2019/10/7
  * @modified By
  */
-public class cardDaoImpl implements ICardDao {
+public class CardDaoImpl implements ICardDao {
     private JdbcTemplate jdbcTemplate = new JdbcTemplate(JdbcUtils.getDataSource());
     //收费标准
     private final int CHARGES = 20;
-
-    /**
-     * 获取钱包金额
-     * @param user 用户
-     * @return 金额
-     */
 
     @Override
     public int getMoney(User user) {
@@ -35,11 +29,6 @@ public class cardDaoImpl implements ICardDao {
         return 0;
     }
 
-    /**
-     * 充值
-     * @param user 用户
-     * @param money 充值金额
-     */
     @Override
     public void addMoney(User user, int money) {
         try {
@@ -55,12 +44,7 @@ public class cardDaoImpl implements ICardDao {
         }
     }
 
-    /**
-     * 驶出缴费
-     *
-     * @param user 用户
-     * @param time 停车时间
-     */
+
     @Override
     public void pay(User user, int time) {
         try {

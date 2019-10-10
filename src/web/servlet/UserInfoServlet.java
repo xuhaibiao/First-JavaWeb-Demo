@@ -2,7 +2,7 @@ package web.servlet;
 
 import doMain.User;
 import service.IUserService;
-import service.impl.userServiceImpl;
+import service.impl.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,12 +15,12 @@ import java.util.List;
  * @date Create in 22:43 2019/9/13
  */
 @WebServlet("/userInfoServlet")
-public class userInfoServlet extends HttpServlet {
+public class UserInfoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
 
-        IUserService service = new userServiceImpl();
+        IUserService service = new UserServiceImpl();
 
         HttpSession session = request.getSession();
         User user =(User) session.getAttribute("user");

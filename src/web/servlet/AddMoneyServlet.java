@@ -1,5 +1,9 @@
 package web.servlet;
 
+import doMain.User;
+import service.IUserService;
+import service.impl.UserServiceImpl;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,18 +14,23 @@ import java.io.IOException;
 
 /**
  * @author HaibiaoXu
- * @date Create in 20:01 2019/10/7
- * @modified By
+ * @date Create in 22:43 2019/9/13
  */
-@WebServlet("/logoutServlet")
-public class logoutServlet extends HttpServlet {
+@WebServlet("/addMoneyServlet")
+public class AddMoneyServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        session.removeAttribute("user");
-        response.sendRedirect("login.jsp");
+        request.setCharacterEncoding("utf-8");
 
-//        request.getRequestDispatcher("/login.jsp").forward(request, response);
+        int money = Integer.parseInt(request.getParameter("money"));
+
+        IUserService service = new UserServiceImpl();
+        HttpSession session = request.getSession();
+        User user =(User) session.getAttribute("user");
+
+        service.addMoney(user,money);
+
+        request.getRequestDispatcher("/userInfoServlet").forward(request, response);
 
     }
 

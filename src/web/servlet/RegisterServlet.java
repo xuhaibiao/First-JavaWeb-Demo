@@ -2,7 +2,7 @@ package web.servlet;
 
 import doMain.User;
 import service.IUserService;
-import service.impl.userServiceImpl;
+import service.impl.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +16,7 @@ import java.io.IOException;
  * @date Create in 22:00 2019/9/12
  */
 @WebServlet("/registerServlet")
-public class registerServlet extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //获取表单数据并封装成User对象
@@ -33,7 +33,7 @@ public class registerServlet extends HttpServlet {
         loginUser.setPassword(request.getParameter("password"));
         loginUser.setRole("user");
         //调用service层
-        IUserService service = new userServiceImpl();
+        IUserService service = new UserServiceImpl();
         service.register(loginUser);
 
         //响应

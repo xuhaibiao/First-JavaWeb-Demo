@@ -1,9 +1,9 @@
 package test;
 
 import dao.IPlInfoDao;
-import dao.impl.plInfoDaoImpl;
+import dao.impl.PlInfoDaoImpl;
 import doMain.User;
-import doMain.plInfo;
+import doMain.PlInfo;
 import org.junit.Test;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
  * @author HaibiaoXu
  * @date Create in 15:58 2019/9/14
  */
-public class plInfoDaoTest {
+public class PlInfoDaoTest {
 
     @Test
     public void findOne() {
@@ -20,16 +20,16 @@ public class plInfoDaoTest {
         user.setPassword("111");
         user.setUsername("111111");
 
-        IPlInfoDao dao = new plInfoDaoImpl();
-        plInfo one = dao.findOne(user);
+        IPlInfoDao dao = new PlInfoDaoImpl();
+        PlInfo one = dao.findOne(user);
         System.out.println(one);
 
     }
 
     @Test
     public void getNull() {
-        IPlInfoDao dao = new plInfoDaoImpl();
-        List<plInfo> ids = dao.getNull();
+        IPlInfoDao dao = new PlInfoDaoImpl();
+        List<PlInfo> ids = dao.getNull();
         System.out.println(ids);
 
 

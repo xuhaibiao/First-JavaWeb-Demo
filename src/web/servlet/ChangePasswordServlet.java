@@ -2,7 +2,7 @@ package web.servlet;
 
 import doMain.User;
 import service.IUserService;
-import service.impl.userServiceImpl;
+import service.impl.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +17,7 @@ import java.io.IOException;
  * @date Create in 22:40 2019/9/13
  */
 @WebServlet("/changePasswordServlet")
-public class changePasswordServlet extends HttpServlet {
+public class ChangePasswordServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
@@ -37,10 +37,9 @@ public class changePasswordServlet extends HttpServlet {
             newUser.setPassword(newPassword);
             session.setAttribute("user", newUser);
 
-            IUserService service = new userServiceImpl();
+            IUserService service = new UserServiceImpl();
             service.changePassword(newUser, newPassword);
 
-           // response.sendRedirect("userInfoServlet");
             response.sendRedirect("userInfoServlet?result=yes");
         }
 
