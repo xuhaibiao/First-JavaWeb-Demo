@@ -30,10 +30,22 @@ public class PayServlet extends HttpServlet {
         IUserService userService = new UserServiceImpl();
         IManagerService managerService = new ManagerServiceImpl();
 
-        userService.pay(user);
-        managerService.driveOut(user);
+        if (!userService.pay(user)) {
+            request.setAttribute("payError", "yes");
+//            response.sendRedirect("myInfo.jsp?error=yes");
+            request.getRequestDispatcher("/userInfoServlet").forward(request, response);
+        } else {
 
-        request.getRequestDispatcher("userInfoServlet").forward(request, response);
+            if (managerService.driveOut(user)) {
+                request.setAttribute("payError", "no");
+                request.getRequestDispatcher("userInfoServlet").forward(request, response);
+            } else {
+                request.setAttribute("payError", "noCar");
+                request.getRequestDispatcher("userInfoServlet").forward(request, response);
+            }
+
+        }
+
     }
 
     @Override

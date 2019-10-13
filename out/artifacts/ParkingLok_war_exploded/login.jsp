@@ -46,22 +46,28 @@
                 <option value ="administrator">管理员</option>
             </select>
 
-            <div style="margin-top: 1.5%">
-                <input type="text" value="" placeholder="请输入验证码（不区分大小写）" class="input-val">
+            <div style="margin-top: 5%">
+                <input type="text"  placeholder="请输入验证码（不区分大小写）" class="form-control">
                 <canvas id="canvas" width="100" height="30"></canvas>
             </div>
 
             <br><br>
-            <input  type="submit" class="btn btn-lg btn-primary btn-block" value="登录">
+            <input  type="submit" class="btn" style="width:145px;" value="登录">
             没有账号？<a href="${pageContext.request.contextPath}/register.jsp">立即注册！</a>
-        </form>
-
+    </form>
     </div>
+<div>
+    <img id="help"  src="img/help.png" style="display:none">
+
+</div>
+
+
 
 </body>
 </html>
 
 <script>
+
     $(function(){
         var show_num = [];
         draw(show_num);

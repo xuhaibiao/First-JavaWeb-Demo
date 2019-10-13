@@ -32,7 +32,16 @@ public class UserInfoServlet extends HttpServlet {
 
             request.setAttribute("myInfo", info);
             request.setAttribute("username", user.getUsername());
-            request.getRequestDispatcher("/myInfo.jsp").forward(request, response);
+
+            if ("yes".equals(request.getAttribute("payError"))) {
+                request.getRequestDispatcher("/myInfo.jsp?payError=yes").forward(request, response);
+            } else if ("no".equals(request.getAttribute("payError"))) {
+                request.getRequestDispatcher("/myInfo.jsp?payError=no").forward(request, response);
+            } else if ("noCar".equals(request.getAttribute("payError"))) {
+                request.getRequestDispatcher("/myInfo.jsp?payError=noCar").forward(request, response);
+            } else {
+                request.getRequestDispatcher("/myInfo.jsp").forward(request, response);
+            }
         } else {
             request.getRequestDispatcher("/manager.jsp").forward(request, response);
         }

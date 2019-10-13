@@ -28,7 +28,7 @@
         <h2 class="form-signin-heading">欢迎充值！</h2>
         <br>
         <label for="money" class="sr-only" >充值金额</label>
-        <input type="text" id="money" name="money" class="form-control" placeholder="请输入您的充值金额" required autofocus>
+        <input type="text" id="money" name="money" class="form-control" placeholder="请输入您的充值金额（正整数）" required autofocus>
         <br><br>
         <input type="submit" class="btn" style="width:145px;display:inline-block" value="充值">
         <input type="button" class="btn" style="width:145px;display:inline-block" onclick="javascript:history.back(-1);" value="返回">

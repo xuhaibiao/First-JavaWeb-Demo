@@ -46,7 +46,7 @@ public class CardDaoImpl implements ICardDao {
 
 
     @Override
-    public void pay(User user, int time) {
+    public boolean pay(User user, int time) {
         try {
             String sql = "select money from card_info where username = ?";
             int balance = jdbcTemplate.queryForObject(sql,new Object[]{user.getUsername()},Integer.class);
@@ -55,11 +55,14 @@ public class CardDaoImpl implements ICardDao {
 
             int money = time*CHARGES;
 
+            if (balance < money) {
+                return false;
+            }
             jdbcTemplate.update(sql2,new Object[]{balance-money,user.getUsername()});
         } catch (DataAccessException e) {
             e.printStackTrace();
         }
-
+        return true;
     }
     @Override
     public void create(User user) {

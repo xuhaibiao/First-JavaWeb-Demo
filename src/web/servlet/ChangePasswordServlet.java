@@ -35,12 +35,13 @@ public class ChangePasswordServlet extends HttpServlet {
             User newUser = new User();
             newUser.setUsername(user.getUsername());
             newUser.setPassword(newPassword);
+            newUser.setRole(user.getRole());
             session.setAttribute("user", newUser);
 
             IUserService service = new UserServiceImpl();
             service.changePassword(newUser, newPassword);
 
-            response.sendRedirect("userInfoServlet?result=yes");
+            request.getRequestDispatcher("userInfoServlet?result=yes").forward(request,response);
         }
 
     }

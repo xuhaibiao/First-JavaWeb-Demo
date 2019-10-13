@@ -52,7 +52,7 @@ public interface IUserService {
      * 缴费
      * @param user 用户信息
      */
-    void pay(User user);
+    boolean pay(User user);
 
 
     /**

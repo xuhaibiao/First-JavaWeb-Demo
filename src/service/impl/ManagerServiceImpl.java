@@ -34,11 +34,15 @@ public class ManagerServiceImpl implements IManagerService {
     }
 
     @Override
-    public void driveOut(User user) {
+    public boolean driveOut(User user) {
         IUserService service = new UserServiceImpl();
         List<Object> info = service.getInfo(user);
+        if (info.get(1) == null) {
+            return false;
+        }
         Object o = info.get(0);
         this.driveOut((PlInfo) o);
+        return true;
     }
 
 

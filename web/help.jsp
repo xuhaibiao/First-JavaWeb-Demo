@@ -6,10 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<html lang="en">
 <head>
     <title>帮助</title>
 
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%--suppress JSUnresolvedLibraryURL --%>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 

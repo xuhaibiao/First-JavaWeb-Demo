@@ -57,9 +57,9 @@
                 <li role="presentation"><a href="${pageContext.request.contextPath}/help.jsp">用户手册</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">钱包<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
+                    <ul  class="dropdown-menu">
                         <li><a href="${pageContext.request.contextPath}/addMoney.jsp">充值</a></li>
-                        <li><a href="${pageContext.request.contextPath}/payServlet">缴费</a></li>
+                        <li id="pay"><a href="${pageContext.request.contextPath}/payServlet">缴费</a></li>
                     </ul>
                 </li>
                 <li role="presentation"><a href="${pageContext.request.contextPath}/logoutServlet">退出</a></li>
@@ -98,9 +98,19 @@
 
 <script>
     var result ='<%=request.getParameter("result")%>';
+    var error = '<%=request.getParameter("payError")%>'
+
     if(result == 'yes'){
         alert("密码更改成功！");
     }
+    if (error == 'yes') {
+        alert("缴费失败！余额不足");
+    } else if (error == 'no') {
+        alert("缴费成功！");
+    }else if (error == 'noCar') {
+        alert("没有停车，无需缴费!");
+    }
+
 </script>
 
 

@@ -33,5 +33,5 @@ public interface IManagerService {
      * 根据用户缴费驶出车辆
      * @param user 缴费用户
      */
-    void driveOut(User user);
+    boolean driveOut(User user);
 }

@@ -23,8 +23,9 @@ public interface ICardDao {
      *
      * @param user 用户
      * @param time 停车时间
+     * @return 成功与否
      */
-    void pay(User user, int time) ;
+    boolean pay(User user, int time) ;
 
     /**
      * 创建卡

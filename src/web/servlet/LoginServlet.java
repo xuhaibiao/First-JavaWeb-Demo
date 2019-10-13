@@ -47,13 +47,12 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("login.jsp?error=yes");
         }else {
             //µÇÂ¼³É¹¦
-
-
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
 
             request.setAttribute("username",user.getUsername());
-            response.sendRedirect("userInfoServlet");
+           // response.sendRedirect("userInfoServlet");
+            request.getRequestDispatcher("userInfoServlet").forward(request,response);
         }
 
     }

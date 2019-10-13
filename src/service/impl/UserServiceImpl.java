@@ -69,9 +69,9 @@ public class UserServiceImpl implements IUserService {
         dao2.addMoney(user, money);
     }
     @Override
-    public void pay(User user){
+    public boolean pay(User user){
         int time = this.getTime(user);
-        dao2.pay(user, time);
+        return dao2.pay(user, time);
     }
 
 
